@@ -53,7 +53,7 @@ elif  wp_material =='Cotton' and wt_material =='Cotton':
 elif  wp_material =='Cotton' and wt_material =='P/C':
     left_column.write(m4wp)
     right_column.write(m4wt)
-st.write("Courtesy: Dr. Zulfikar Ali, National Textile University")
+st.info("Courtesy: Dr. Zulfikar Ali, National Textile University")
 
 
 
