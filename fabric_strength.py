@@ -11,14 +11,13 @@ import pandas as pd
 st.title("Prediction of Fabric Tensile Strength")
 
 #To create sliders on sidebar
-left_column, right_column = st.beta_columns(2)
-wp_material = left_column.selectbox('Warp Material', ('Cotton', 'P/C'))
-wt_material = right_column.selectbox('Weft Material', ('Cotton', 'P/C'))
-a = left_column.slider('Warp Yarn Strength (cN)', 310, 540, 400)  # 👈 this is a widget
-b = right_column.slider('Weft Yarn Strength (cN)', 310, 540, 400)
-c = left_column.slider('Ends per cm', 40, 80, 60)
-d = right_column.slider('Picks per cm', 40, 80, 60)
-e = left_column.slider('Fabric Float Length', 1, 3, 2)
+wp_material = st.selectbox('Warp Material', ('Cotton', 'P/C'))
+wt_material = st.selectbox('Weft Material', ('Cotton', 'P/C'))
+a = st.slider('Warp Yarn Strength (cN)', 310, 540, 400)  # 👈 this is a widget
+b = st.slider('Weft Yarn Strength (cN)', 310, 540, 400)
+c = st.slider('Ends per cm', 40, 80, 60)
+d = st.slider('Picks per cm', 40, 80, 60)
+e = st.slider('Fabric Float Length', 1, 3, 2)
 
 # m1wp[warp fabric strength] and m1wt[weft fabric strength], m1wt equation is for pc warp, pc weft
 m1wp = int(- 5 -(0.37 * a)+(0.09 * b)-(0.72 * c)+(1.22 * d)-(14.89 * e)+(0.02 * c * a))
@@ -38,10 +37,8 @@ m4wp = int(58.77 -(0.38 * a)+(0.04 * b)-(0.97 * c)+(0.59 * d)-(12.8 * e)+(0.015 
 m4wt = int(- 33.07 +(0.05 * a)-(0.16 * b)+(0.42 * c)+(1.04 * d)-(12.4 * e)+(0.018* d * b))
 
 #To show results on the main page, under the heading 
-
+left_column, right_column = st.beta_columns(2)
 left_column.subheader("Fabric Tensile Strength (Warp), N")
-right_column.subheader(".")
-right_column.subheader(".")
 right_column.subheader("Fabric Tensile Strength (Weft), N")
 
 if wp_material =='P/C' and wt_material =='P/C': 
