@@ -14,8 +14,8 @@ st.title("Prediction of Fabric Tensile Strength")
 left_column, right_column = st.beta_columns(2)
 wp_material = left_column.selectbox('Warp Material', ('Cotton', 'P/C'))
 wt_material = right_column.selectbox('Weft Material', ('Cotton', 'P/C'))
-a = left_column.slider('Warp Yarn Strength (gm)', 310, 540, 400)  # 👈 this is a widget
-b = right_column.slider('Weft Yarn Strength (gm)', 310, 540, 400)
+a = left_column.slider('Warp Yarn Strength (cN)', 310, 540, 400)  # 👈 this is a widget
+b = right_column.slider('Weft Yarn Strength (cN)', 310, 540, 400)
 c = left_column.slider('Ends per cm', 40, 80, 60)
 d = right_column.slider('Picks per cm', 40, 80, 60)
 e = left_column.slider('Fabric Float Length', 1, 3, 2)
@@ -39,10 +39,10 @@ m4wt = int(- 33.07 +(0.05 * a)-(0.16 * b)+(0.42 * c)+(1.04 * d)-(12.4 * e)+(0.01
 
 #To show results on the main page, under the heading 
 
-left_column.subheader("Fabric Tensile Strength (Warp)")
+left_column.subheader("Fabric Tensile Strength (Warp), N")
 right_column.subheader(".")
 right_column.subheader(".")
-right_column.subheader("Fabric Tensile Strength (Weft)")
+right_column.subheader("Fabric Tensile Strength (Weft), N")
 
 if wp_material =='P/C' and wt_material =='P/C': 
     left_column.write(m1wp)
