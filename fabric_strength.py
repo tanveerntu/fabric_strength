@@ -13,8 +13,8 @@ st.title("Prediction of Fabric Tensile Strength")
 #To create sliders on sidebar
 wp_material = st.selectbox('Warp Material', ('Cotton', 'P/C'))
 wt_material = st.selectbox('Weft Material', ('Cotton', 'P/C'))
-a = st.slider('Warp Yarn Strength (cN)', 310, 540, 400)  # 👈 this is a widget
-b = st.slider('Weft Yarn Strength (cN)', 310, 540, 400)
+a = st.slider('Warp Yarn Strength (cN)', 270, 540, 400)  # 👈 this is a widget
+b = st.slider('Weft Yarn Strength (cN)', 270, 540, 400)
 c = st.slider('Ends per cm', 40, 80, 60)
 d = st.slider('Picks per cm', 40, 80, 60)
 e = st.slider('Fabric Float Length', 1, 3, 2)
