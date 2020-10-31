@@ -65,6 +65,56 @@ elif  wp_material =='Cotton' and wt_material =='Cotton':
 elif  wp_material =='Cotton' and wt_material =='P/C':
     left_column.write(m4wp)
     right_column.write(m4wt)
+    
+#Part 2: for prediction of yarn strength
+st.title("Prediction of Yarn Strength")
+st.write("for producing fabric of specific strength")
+wpy_material = st.selectbox('Warp Yarn Material', ('Cotton', 'P/C'))
+wty_material = st.selectbox('Weft Yarn Material', ('Cotton', 'P/C'))
+
+
+#To create sliders on sidebar
+
+X = st.slider('Warp Yarn linear density (tex)', 15, 30, 20)  # 👈 this is a widget
+Y = st.slider('Weft Yarn linear density (tex)', 15, 30, 20)
+
+FTSwp = st.slider('Fabric Warp Strength (N)', 130, 850, 400)
+FTSwt = st.slider('Fabric Weft Strength (N)', 130, 850, 400)
+
+E = st.slider('Ends/ cm', 40, 80, 60)
+P = st.slider('Picks/ cm', 40, 80, 60)
+FL = st.slider('Float Length', 1, 3, 2)
+
+YSwp1 = int ((FTSwp)+(15.07)-(2.29 * Y)+(0.72 * E)-(1.22 * P)+(14.9 * FL))/((0.02 * E)-(0.37)) 
+YSwt1 = int ((FTSwt)+(48.85)-(1.84 * X)-(0.85 * E)-(0.14 * P)+(14.01 * FL))/((0.02 * P)-(0.23)) 
+
+YSwp2 = int ((FTSwp)+(24.75)-(2.65 * Y)+(0.76 * E)-(0.89 * P)+(16.5 * FL))/((0.023 * E)-(0.37))
+YSwt2 = int ((FTSwt)+(173.16)-(1.41 * X)-(0.96 * E)-(1.79 * P)+(10.35 * FL))/((0.014 * P)+(0.08))
+
+YSwp3 = int ((FTSwp)-(50.37)-(1.21 * Y)+(1.85 * E)-(0.88 * P)+(13.8 * FL))/((0.025 * E)-(0.5)) 
+YSwt3 = int ((FTSwt)-(36.95)-(0.54 * X)-(0.72 * E)+(1.65 * P)+(13.51 * FL))/((0.023 * P)-(0.38)) 
+
+YSwp4 = int ((FTSwp)-(53.56)-(1.12 * Y)-(0.97 * E)-(0.59 * P)+(12.8 * FL))/((0.015 * E)-(0.38)) 
+YSwt4 = int ((FTSwt)+(38.36)-(0.94 * X)-(0.42 * E)-(1.04 * P)+(12.4 * FL))/((0.018 * P)-(0.16)) 
+
+#To show results on the main page, under the heading 
+left_column, right_column = st.beta_columns(2)
+left_column.subheader("Warp Yarn Tensile Strength, cN")
+right_column.subheader("Weft Yarn Tensile Strength, cN")
+
+if wpy_material =='P/C' and wty_material =='P/C': 
+    left_column.write(YSwp1)
+    right_column.write(YSwt1)
+elif  wpy_material =='P/C' and wty_material =='Cotton':
+    left_column.write(YSwp2)
+    right_column.write(YSwt2)
+elif  wpy_material =='Cotton' and wty_material =='Cotton':
+    left_column.write(YSwp3)
+    right_column.write(YSwt3)
+elif  wpy_material =='Cotton' and wty_material =='P/C':
+    left_column.write(YSwp4)
+    right_column.write(YSwt4)
+    
 st.info("Courtesy: Dr. Zulfikar Ali, National Textile University")
 
 
