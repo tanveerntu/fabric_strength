@@ -17,7 +17,7 @@ a = st.slider('Warp Yarn Strength (cN)', 270, 540, 400)  # 👈 this is a widget
 b = st.slider('Weft Yarn Strength (cN)', 270, 540, 400)
 c = st.slider('Ends per inch', 40, 80, 60)
 d = st.slider('Picks per inch', 40, 80, 60)
-e = st.slider('Float Length: e.g. select 1 for 1/1 plain weave; 2 for 2/1 twill; 3 for 3/1 twill', 1, 3, 2)
+e = st.slider('Float Length: Select 1 for 1/1 plain weave; 2 for 2/1 twill; 3 for 3/1 twill', 1, 3, 2)
 
 #a = wpYs; b = wtYs; c = E; d = P; e=FL
 # m1wp[warp fabric strength] and m1wt[weft fabric strength], m1wt equation is for pc warp, pc weft
