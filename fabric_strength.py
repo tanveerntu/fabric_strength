@@ -75,8 +75,8 @@ wty_material = st.selectbox('Weft Yarn Material', ('Cotton', 'P/C'))
 
 #To create sliders on sidebar
 
-X = st.slider('Warp Yarn linear density (Ne)', 20, 40, 30)  # 👈 this is a widget
-Y = st.slider('Weft Yarn linear density (Ne)', 20, 40, 30)
+X = st.slider('Warp Yarn Count (Ne)', 20, 40, 30)  # 👈 this is a widget
+Y = st.slider('Weft Yarn Count (Ne)', 20, 40, 30)
 X1 = 590.5/X
 Y1 = 590.5/Y
 
