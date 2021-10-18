@@ -49,7 +49,7 @@ m4wt = int((- 33.07) +(0.05 * a)-(0.16 * b)+(0.42 * c)+(1.04 * d)-(12.4 * e)+(0.
 
 
 #To show results on the main page, under the heading 
-left_column, right_column = st.beta_columns(2)
+left_column, right_column = st.columns(2)
 left_column.subheader("Fabric Tensile Strength (Warp), N")
 right_column.subheader("Fabric Tensile Strength (Weft), N")
 
@@ -100,7 +100,7 @@ YSwp4 = int((FTSwp)-(53.56)-(1.12 * Y1)-(0.97 * E)-(0.59 * P)+(12.8 * FL))/((0.0
 YSwt4 = int((FTSwt)+(38.36)-(0.94 * X1)-(0.42 * E)-(1.04 * P)+(12.4 * FL))/((0.018 * P)-(0.16)) 
 
 #To show results on the main page, under the heading 
-left_column, right_column = st.beta_columns(2)
+left_column, right_column = st.columns(2)
 left_column.subheader("Warp Yarn Tensile Strength, cN")
 right_column.subheader("Weft Yarn Tensile Strength, cN")
 
