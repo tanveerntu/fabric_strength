@@ -4,6 +4,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
+st.set_page_config(page_title="Pakistan Textile Exports",
+                   page_icon=":bar_chart:"   # see different icon options at https://www.webfx.com/tools/emoji-cheat-sheet/
+
+)
 
 
 #Title on main page
